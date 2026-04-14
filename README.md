@@ -1,4 +1,4 @@
-i# 🌊 Flood Prediction (Houston)
+🌊 Flood Prediction (Houston)
 
 A minimal, physically grounded approach to modeling flood risk using real-world data.
 
