@@ -46,4 +46,86 @@ This coarse spatial scale helps reveal regional patterns that are not visible at
 ---
 
 ## 🧱 Project Structure
+flood-prediction/
+│
+├── notebooks/
+│ ├── 01_study_area_and_grid.ipynb
+│ ├── 02_target_variable_design.ipynb
+│ ├── 03_features_and_proxy.ipynb
+│ └── 04_modeling.ipynb
+│
+├── data/
+│ ├── raw/ # external datasets (ignored)
+│ ├── interim/ # intermediate outputs
+│ └── processed/ # modeling tables
+│
+├── outputs/
+│ └── figures/ # saved visualizations
+│
+├── config.py # project configuration
+└── README.md
 
+
+---
+
+## ⚙️ Method Overview
+
+1. **Grid Construction**
+   - Houston divided into a 5 km spatial grid
+
+2. **Target Variable Challenge**
+   - Flood events are extremely sparse (~0.07%)
+   - Direct modeling is not feasible
+
+3. **Proxy Definition**
+   - Low elevation → susceptibility  
+   - High rainfall → trigger  
+   - Combined → flood-prone condition (~2.1%)
+
+4. **Validation**
+   - Higher flood event density in susceptible regions
+
+5. **Modeling**
+   - Predict next-day proxy label (t+1)
+   - Random Forest classifier
+
+---
+
+## 📦 Data Sources
+
+- **NOAA Storm Events** – flood event records  
+- **Open-Meteo** – daily precipitation  
+- **USGS 3DEP** – elevation data  
+
+---
+
+## ⚠️ Limitations
+
+This is a **coarse-scale model** and does not account for:
+
+- urban drainage infrastructure  
+- land use / impervious surfaces  
+- localized hydrological effects  
+
+It is intended as a **baseline, interpretable model**, not a full flood prediction system.
+
+---
+
+## 💡 Takeaway
+
+> The physics may be simple.  
+> The challenge is making it work with real data.
+
+---
+
+## 📝 Article
+
+Full write-up available on Medium:  
+👉 [Add your Medium link here]
+
+---
+
+## 👤 Author
+
+Suvo Ganguli  
+AI for Humanity Tech
